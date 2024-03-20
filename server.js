@@ -2,7 +2,7 @@
 //skapar webbserver
 const express = require("express");
 const app = express();
-const port = 4000;
+const port = 3000;
 
 app.set("view engine", "ejs") //view engine EJS
 app.use(express.static("static-map"));  //statiska filer i katalogen static-map

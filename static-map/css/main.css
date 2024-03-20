@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0074D9;
+}
+
+nav {
+    background-color: #0074D9;
+    font-size: 1.2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li {
+    padding: 0.8em 0;
+    width: 100%;
+}
+
+nav a { 
+    color: white;
+    text-decoration: none;
+    padding: 0 1em;
+}
+
+nav a:hover {
+    color: black;
+}
+
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    color: black;
+    cursor: pointer;
+}
+
+.open {
+    margin: 0 1em;
+}
+
+.menu-btn {
+    background-color: #0074D9;
+    border: none;
+}
+
+.menu-btn:hover {
+    border: 2px solid white;
+}
+
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.menu-text {
+    font-size: 1.2em;
+    color: black;
+}
+
+.close {
+    margin: 1em 1.5em;
+    padding: 10px 15px;
+}
+
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+@media only screen and (min-width: 900px) {
+    .menu-btn {
+        display: none;
+    }
+
+    #open-menu {
+        display: none !important;
+    }
+
+    header {
+        position: static;
+        background-color: #0074D9;
+        width: 100%;
+    }
+
+    nav {
+        display: block !important;
+        position: static;
+        right: 0;
+        top: 0;
+        height: auto;
+        font-size: 1.4em;
+        width: 100%;
+    }
+
+    nav ul {
+        height: 100%;
+        width: 100%;
+        margin-top: 10px;
+        margin-right: 5%;
+    }
+
+    nav li {
+        display: inline;
+        padding: 0.5em;
+        font-size: 16px;
+    }
+
+    nav a {
+        color: black;
+    }
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10%;
+}
