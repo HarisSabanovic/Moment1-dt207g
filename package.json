@@ -2,7 +2,7 @@
   "name": "moment1-dt207g",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "install": "node install.js",
     "start": "nodemon server.js"
