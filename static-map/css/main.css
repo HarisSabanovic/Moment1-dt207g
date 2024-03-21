@@ -11,6 +11,8 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    background: linear-gradient(45deg, #6a7cff, #9b6aff);
+    height: 100vh;
 }
 
 
@@ -154,6 +156,56 @@ nav a:hover {
 }
 
 h1 {
+    color: white;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
+}
+
+table {
+    width: 90%;
+    margin-inline: auto;
+    background-color: white;
+}
+
+thead {
+    background-color: #9b6aff;
+    color: white;
+}
+
+td {
+    background-color: #eaeaea;
+    padding: 10px;
+    text-align: center;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+#addcourse-btn {
+    color: white;
+    border: 2px solid white;
+    padding: 5px 15px;
+    background-color: transparent;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#addcourse-btn:hover {
+    animation: fadein 1s forwards;
+}
+
+@keyframes fadein {
+    from {
+        background-color: transparent;
+        color: white;
+    }
+
+    to {
+        color: #9b6aff;
+    background-color: white;
+    }
 }
