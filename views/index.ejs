@@ -47,6 +47,16 @@
         </thead>
 
         <tbody id="course-list">
+            <% if(courses.length > 0) { %>
+                <% courses.forEach((kurs) => { %>
+                    <tr>
+                        <td><%= kurs.COURSE_CODE %></td>
+                        <td><%= kurs.COURSE_NAME %></td>
+                        <td><%= kurs.COURSE_LINK %></td>
+                        <td><%= kurs.COURSE_PROGRESSION %></td>
+                    </tr>
+                <% }); %>
+           <% }; %>
         </tbody>
     </table>
 </body>

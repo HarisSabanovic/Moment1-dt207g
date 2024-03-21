@@ -32,14 +32,15 @@ connection.connect((error) => {
 
 //routing
 app.get("/", (req, res) => {  
-    res.render("index");
     connection.query("SELECT * FROM courses", function (err, course) {
         if (err) {
             console.error("Error executing query:", err);
             return;
-        }
+        } 
         console.log(course);
+        res.render("index", {courses: course});
     });
+
 });
 
 app.get("/addcourse", (req, res) => {
