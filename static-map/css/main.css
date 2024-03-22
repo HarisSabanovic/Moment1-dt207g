@@ -209,3 +209,23 @@ td {
     background-color: white;
     }
 }
+
+form {
+    background-color: white;
+    width: 60%;
+    margin-inline: auto;
+    padding: 1em;
+}
+
+form label {
+    display: block;
+    margin: 10px;
+}
+
+form input {
+    width: 50%;
+    margin-left: 10px;
+    height: 30px;
+    border-color: #9b6aff;
+    border-radius: 5px;
+}
