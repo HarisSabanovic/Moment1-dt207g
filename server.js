@@ -41,6 +41,8 @@ app.get("/", (req, res) => {
 
         res.render("index", {courses: course});
     });
+
+
 });
 
 app.get("/addcourse", (req, res) => {
@@ -58,16 +60,40 @@ app.post("/addcourse", (req, res) => {
     let newLink = req.body.link;
     let newProg = req.body.prog;
 
-    connection.query("INSERT INTO courses (course_code, course_name, course_link, course_progression) VALUES (?, ?, ?, ?)", [newCode, newName, newLink, newProg], function (err, course) {
-        if (err) {
-            console.error("Error executing query:", err);
+    let error = [];
+
+    if(newCode === "") {
+        error.push("Ange korrekt kurskod");
+    } else if (newName === ""){
+        error.push("Ange korrekt kursnamn");
+    } else if (newLink === ""){
+        error.push("Ange korrekt länk");
+    } else if (newProg === ""){
+        error.push("Ange korrekt Progression");
+    } else {
+        connection.query("INSERT INTO courses (course_code, course_name, course_link, course_progression) VALUES (?, ?, ?, ?)", [newCode, newName, newLink, newProg], function (err, course) {
+            if (err) {
+                console.error("Error executing query:", err);
+                return;
+            } 
+        });
+    }
+
+    res.render("addcourse", {error: error});
+});
+
+app.get("/delete/:id", (req, res) => {
+    let id = req.params.id;
+    connection.query("DELETE FROM COURSES WHERE ID=" + id, (err) => {
+        if(err) {
+            console.error("Could not delete row " + err);
             return;
-        } 
+        }
+
+        res.redirect("/");
     });
 
-    res.render("addcourse");
-})
-
+});
 
 //starta
 app.listen(port, () => {
