@@ -35,6 +35,12 @@
     </header>
     <h1>lägg till kurser</h1>
 
+    <% if(locals.error) { %>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+
     <form method="post">
         <label for="code">Kurskod</label>
         <input type="text" id="code" name="code">

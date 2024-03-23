@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startsida | Kurser</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js" type="module"></script>
 </head>
 <body>
 
@@ -34,31 +35,22 @@
         </nav>
     </header>
 
-    <h1>Dina kurser</h1>
 
-    <table>
-        <thead>
-          <tr>
-            <th id="course-code">Kurskod</th>
-            <th id="course-name">Kursnamn</th>
-            <th id="course-link">Länk</th>
-            <th id="course-progression">Progression</th>
-          </tr>
-        </thead>
+    <div class="course-container">
+        <h1>Dina kurser</h1>
 
-        <tbody id="course-list">
-            <% if(courses.length > 0) { %>
-                <% courses.forEach((kurs) => { %>
-                    <tr>
-                        <td><%= kurs.COURSE_CODE %></td>
-                        <td><%= kurs.COURSE_NAME %></td>
-                        <td><%= kurs.COURSE_LINK %></td>
-                        <td><%= kurs.COURSE_PROGRESSION %></td>
-                    </tr>
-                <% }); %>
-           <% }; %>
-        </tbody>
-    </table>
+        <% if(courses.length > 0) { %>
+            <% courses.forEach((kurs) => { %>
+                <div class="course-info">
+                    <h3><%= kurs.COURSE_NAME %></h3>
+                    <p><strong>Kurskod: </strong><%= kurs.COURSE_CODE %></p>
+                    <p><strong>Kurslänk: </strong><%= kurs.COURSE_LINK %></p>
+                    <p><strong>Kursprogression: </strong><%= kurs.COURSE_PROGRESSION %></p>
+                    <a href="/delete/<%= kurs.ID %>"><button>Radera</button></a>
+                </div>
+            <% }); %>
+       <% }; %>
+    </div>
 
     <div class="btn-container">
        <button id="addcourse-btn" onclick="window.location.href = '/addcourse'">Lägg till kurs</button>
