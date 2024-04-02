@@ -17,10 +17,10 @@ body {
 
 @keyframes bg-color{
     0% {
-        background: linear-gradient(30deg, #6a7cff, #9b6aff);
+        background: linear-gradient(45deg, #6a7cff, #9b6aff);
     }
     50% {
-        background: linear-gradient(30deg, #9b6aff, #6a7cff);
+        background: linear-gradient(45deg, #9b6aff, #6a7cff);
     }
     100% {
         background: linear-gradient(30deg, #6a7cff, #9b6aff);
@@ -44,6 +44,17 @@ nav {
     width: 250px;
     display: none;
     color: white;
+    animation: slideIn 0.8s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(500px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 nav ul {
@@ -107,7 +118,7 @@ nav a:hover {
     transform: rotate(45deg);
     position: relative;
     top: 5px;
-    color: white;
+    background-color: #6a7cff !important;
 }
 
 .cross2 {
@@ -115,7 +126,7 @@ nav a:hover {
     transform: rotate(135deg);
     position: relative;
     top: -3px;
-    color: white;
+    background-color: #6a7cff !important;
 }
 
 
@@ -143,6 +154,7 @@ nav a:hover {
         font-size: 1.4em;
         width: 100%;
         background-color: transparent;
+        animation: none !important;
     }
 
     nav ul {
@@ -324,4 +336,26 @@ form input {
         width: 50%;
     }
     
+}
+
+/*om os sida*/
+.about-container {
+    width: 50%;
+    margin-inline: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 6%;
+}
+
+.about-info {
+    margin-top: 20px;
+}
+
+.about-info h3 {
+    padding: 5px;
+}
+
+.about-info p {
+    padding: 5px;
 }
