@@ -16,6 +16,25 @@ connection.connect((error) => {
     console.log("connected to MySQL");
 })
 
+// Skapa tabellen om den inte redan finns
+const createTable = `
+CREATE TABLE IF NOT EXISTS COURSES (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    COURSE_NAME VARCHAR(255) NOT NULL,
+    COURSE_CODE VARCHAR(50) NOT NULL,
+    COURSE_LINK VARCHAR(255),
+    COURSE_PROGRESSION VARCHAR(10)
+)
+`;
+
+connection.query(createTable, (error, results) => {
+    if (error) {
+        console.error("Error creating table: " + error);
+        return;
+    }
+    console.log("Table 'COURSES' is ready.");
+});
+
 //sätter in värden
 connection.query(`INSERT INTO COURSES (COURSE_NAME, COURSE_CODE, COURSE_LINK, COURSE_PROGRESSION) VALUES
 ('Webbutveckling I', 'DT057G', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT057G/', 'A'),
